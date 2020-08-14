@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arimo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-image: url("https://i.pinimg.com/originals/5a/c1/29/5ac1296b709f4427d4c7785a322d78a2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo-principal{
+    margin: 1.5rem 0 3rem;
+}
+
+.titulo {
+    text-align: center;
+    color: white;
+}
+
+.titulo-cita{
+    margin: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.crear-cita-form{
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.child-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 47%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+label{
+    align-self: flex-start;
+    color: white;
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+}
+
+input, textarea,button{
+    width: 100%;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+textarea{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+}
+
+button{
+    border: 1.5px solid #f4f4f4;
+    color: white;
+    background-color: #17c3b2;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.cita-creada{
+    width: 100%;
+    padding: 15px;
+    margin: 50px 0 10px;
+    background-color: white;
+    border-radius: 7px;
+    color: black;
+}
+
+.cita-creada span{
+    font-weight: 600;
+}
+
+.cita-creada button{
+    color: white;
+    background-color: #db162f;
+}
