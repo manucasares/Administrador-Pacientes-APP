@@ -1,15 +1,14 @@
 import React, {useState} from 'react'
 import CitaCreada from './CitaCreada'
-import CrearCitaForm from './CrearCitaForm'
+import CrearCita from './CrearCita'
 
 const Container = () => {
     const [citas, setCitas] = useState([]);
     
-    console.log(citas);
     return (
         <div className='container'>
-            <CrearCitaForm setCitas={setCitas}/>
-            <CitaCreada citas = {citas}/>
+            <CrearCita setCitas={setCitas}/>
+            <CitaCreada citas = {citas} setCitas={setCitas}/>
         </div>
     )
 }

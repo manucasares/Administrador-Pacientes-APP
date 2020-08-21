@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 
-const CrearCitaForm = ({setCitas}) => {
-    const [inputValue, setInputValue] = useState({
+const CrearCita = ({setCitas}) => {
+
+    const initialState = {
+        id : new Date().getTime(),
         mascota: "",
         dueño: "",
         sintomas: "",
-    });
+    }
+
+    const [inputValue, setInputValue] = useState(initialState);
+
+    //creo este state para mostrar el cartel
+    const [validation, setValidation] = useState(false)
 
     const { mascota, dueño, sintomas } = inputValue;
-
+   
 
     const handleInputChange = ({ target }) => {
         setInputValue({
@@ -20,13 +27,24 @@ const CrearCitaForm = ({setCitas}) => {
     const handleInputSubmit = (e) => {
         e.preventDefault();
 
-        setCitas(prevState => [inputValue , ...prevState])
+        const validateInputs = [mascota, dueño, sintomas].some( input => input === '');
+        
+        if(validateInputs){
+            setValidation(true);
+            return;
+        }
+
+        setValidation(false);
+        setCitas(prevState => [inputValue , ...prevState]);
+        setInputValue(initialState);
     };
 
 
     return (
         <div className = 'crear-cita-form'>
             <h2 className="titulo titulo-cita">CREAR CITA</h2>
+
+            { validation  && (<h4 className='validationMensaje'>COMPLETE TODOS LOS CAMPOS</h4>) } 
 
             <form onSubmit={handleInputSubmit}>
                 <label htmlFor="nombre_mascota">Nombre Mascota</label>
@@ -68,4 +86,4 @@ const CrearCitaForm = ({setCitas}) => {
     );
 };
 
-export default CrearCitaForm;
+export default CrearCita;
